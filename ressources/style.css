@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#container-authentification{
+    height: 100vh;
+}
+
+#container-authentification, #form-authentification{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
