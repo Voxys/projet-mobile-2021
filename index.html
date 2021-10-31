@@ -20,60 +20,98 @@
   <script type="plain/text" id="vue-accueil">
     <ion-app>
       <ion-content fullscreen>
-        <ion-button expand="block" href="#tableau-bord">Connexion</ion-button>
+        <section id="main">
+          <p id="sign">Connexion</p>
+          <div id="container">
+            <form>
+              <div class="champ">
+                <input type="email" placeholder="Courriel" id="courriel" />
+              </div>
+              <div class="champ">
+                <input type="password" placeholder="Mot de passe" id="motDePasse"/>
+              </div>
+              <div id="champ-submit">
+                <ion-button href="#vue-tableau-bord">Se connecter</ion-input>
+              </div>
+            </form>
+          </div>
+        </section>
       </ion-content>
     </ion-app>
   </script>
   <script type="plain/text" id="vue-tableau-bord">
-    <h1>Tableau de bord</h1>
         <ion-app>
             <ion-content fullscreen>
+              <div id="slides-container">
               <ion-slides>
               <ion-slide>
               <a href="#vue-carte">
               <ion-card>
-                <img src="https://wallup.net/wp-content/uploads/2017/03/28/439320-photography-nature-landscape-river-snow-winter-sunrise-cold-mountains-snowy_peak-pine_trees-frost-Banff_National_Park-Canada.jpg" />
                 <ion-card-header>
-                  <ion-card-subtitle>Destination</ion-card-subtitle>
-                  <ion-card-title>Madison, WI</ion-card-title>
+                  <ion-card-title>Sentier de la marmotte sucré</ion-card-title>
                 </ion-card-header>
-                <ion-card-content>
-                  Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+                <div class="ion-card-bottom">
                   <ion-chip color="primary">
-                    <ion-label>Primary</ion-label>
+                    <ion-label>Raquette</ion-label>
                   </ion-chip>
-                </ion-card-content>
+                </div>
               </ion-card>
             </a>
             </ion-slide>
             <ion-slide>
+              <a href="#vue-carte">
               <ion-card>
-                <img src="https://wallup.net/wp-content/uploads/2017/03/28/439320-photography-nature-landscape-river-snow-winter-sunrise-cold-mountains-snowy_peak-pine_trees-frost-Banff_National_Park-Canada.jpg" />
                 <ion-card-header>
-                  <ion-card-subtitle>Destination</ion-card-subtitle>
-                  <ion-card-title>Madison, WI</ion-card-title>
+                  <ion-card-title>Sentier de la marmotte sucré</ion-card-title>
                 </ion-card-header>
-                <ion-card-content>
-                  Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-                </ion-card-content>
+                <div class="ion-card-bottom">
+                  <ion-chip color="primary">
+                    <ion-label>Raquette</ion-label>
+                  </ion-chip>
+                </div>
               </ion-card>
+            </a>
             </ion-slide>
-        <ion-slide>
+            <ion-slide>
+              <a href="#vue-carte">
               <ion-card>
-                <img src="https://wallup.net/wp-content/uploads/2017/03/28/439320-photography-nature-landscape-river-snow-winter-sunrise-cold-mountains-snowy_peak-pine_trees-frost-Banff_National_Park-Canada.jpg" />
                 <ion-card-header>
-                  <ion-card-subtitle>Destination</ion-card-subtitle>
-                  <ion-card-title>Madison, WI</ion-card-title>
+                  <ion-card-title>Sentier de la marmotte sucré</ion-card-title>
                 </ion-card-header>
-                <ion-card-content>
-                  Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-                </ion-card-content>
+                <div class="ion-card-bottom">
+                  <ion-chip color="primary">
+                    <ion-label>Raquette</ion-label>
+                  </ion-chip>
+                </div>
               </ion-card>
+            </a>
             </ion-slide>
           </ion-slides>
+        </div>
+        <footer>
+          <ion-icon name="filter-outline"></ion-icon>
+          <ion-searchbar></ion-searchbar>
+        </footer>
         </ion-content>
       </ion-app>
   </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <!-- <script src="./poc-maps/index.js"></script> -->
+  <script type="plain/text" id="vue-carte">
+    <ion-fab horizontal="end" vertical="center" slot="fixed">
+        <!-- <ion-fab-button color="primary">
+          <ion-icon name="navigate-outline"></ion-icon>
+        </ion-fab-button> -->
+      </ion-fab>
+    <div id="map-container">
+    <div id="map">
+    </div>
+    </div>
+    <footer>
+      
+    </footer>
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC1Ox2Bcui6d901BsVLeK6uB5pFm8GcZk" async></script>
 </body>
 
 </html>
