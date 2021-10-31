@@ -39,11 +39,12 @@ class VueCarte {
 
         map = new google.maps.Map(document.getElementById("map"), {
             mapId: "8752fd40d51bd45c",
+            disableDefaultUI: true,
             center: {
                 lat: 48.849998,
                 lng: -67.533333
             },
-            zoom: 8,
+            zoom: 15,
         });
 
         new google.maps.Marker({
@@ -60,7 +61,7 @@ class VueCarte {
             geodesic: true,
             strokeColor: "#B85DEF",
             strokeOpacity: 1.0,
-            strokeWeight: 4,
+            strokeWeight: 8,
         });
 
         path.setMap(map);
