@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="ressources/style.css">
+  <link rel="stylesheet" href="ressources/stylesheet/style.css">
   <!-- Intégration de IONIC -->
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
   <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-  <!------------------------->
+  <!----------Proj4----------->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.5/proj4.js"></script>
   <script src="vues/VueTableauBord.js"></script>
   <script src="vues/VueCarte.js"></script>
   <script defer src="App.js"></script>
@@ -39,6 +40,8 @@
       </ion-content>
     </ion-app>
   </script>
+  <script type="text/javascript" src="donnees/data.js"></script>
+  <script type="text/javascript" src="donnees/test.js"></script>
   <script type="plain/text" id="vue-tableau-bord">
         <ion-app>
             <ion-content fullscreen>
@@ -96,7 +99,6 @@
       </ion-app>
   </script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <!-- <script src="./poc-maps/index.js"></script> -->
   <script type="plain/text" id="vue-carte">
     <ion-fab horizontal="end" vertical="center" slot="fixed">
         <!-- <ion-fab-button color="primary">
@@ -115,7 +117,7 @@
             <h1>Sentier marmotte</h1>
           </div>
         </div>
-      <ion-button><ion-icon name="navigate-outline"></ion-icon></ion-button>
+      <ion-button id="start"><ion-icon name="navigate-outline"></ion-icon></ion-button>
       </div>
     </div>
     <footer>
@@ -124,5 +126,4 @@
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC1Ox2Bcui6d901BsVLeK6uB5pFm8GcZk" async></script>
 </body>
-
 </html>

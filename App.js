@@ -23,9 +23,11 @@ class App {
 
         if (!hash) {
             this.afficher();
-        } else if (hash.match(/^#vue-tableau-bord/)) {
+        } 
+        else if (hash.match(/^#vue-tableau-bord/)) {
             this.vueTableauBord.afficher();
-        }  else if (hash.match(/^#vue-carte/)) {
+        }  
+        else if (hash.match(/^#vue-carte/)) {
             this.vueCarte.afficher();
             this.vueCarte.initialiserCarte();
         } 
