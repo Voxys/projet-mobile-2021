@@ -1,5 +1,5 @@
 # Projet mobile final
-Réalisation d’une application mobile donnant accés au différents sentiers hivernaux présent au Québec.
+Réalisation d’une application mobile listant les  différents sentiers hivernaux présent au Québec dont la Sépaq est gestionnaire.
   
 ## 👨‍💻 Participants
 [![github](https://img.shields.io/badge/brice_camus-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Voxys)
