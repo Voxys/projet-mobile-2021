@@ -13,29 +13,34 @@ class VueCarte {
     initialiserCoordonneesSentier(idSentier) {
         console.log(data);
 
-        //Le jeu de données est au format plan, projeté sur la zone du Québec (format EPSG:32198)
+        // Le jeu de données est au format plan, projeté sur la zone du Québec (format EPSG:32198)
         var firstProjection = 'PROJCS["NAD83 / Quebec Lambert",GEOGCS["NAD83",DATUM["North_American_Datum_1983",SPHEROID["GRS 1980",6378137,298.257222101,AUTHORITY["EPSG","7019"]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY["EPSG","6269"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4269"]],PROJECTION["Lambert_Conformal_Conic_2SP"],PARAMETER["standard_parallel_1",60],PARAMETER["standard_parallel_2",46],PARAMETER["latitude_of_origin",44],PARAMETER["central_meridian",-68.5],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],AUTHORITY["EPSG","32198"]]';
 
-        //Nous le convertissons donc au format sphérique, mondial (format EPSG:4326)
+        // Nous le convertissons donc au format sphérique, mondial (format EPSG:4326)
         var secondProjection = '+proj=longlat +datum=WGS84 +no_defs';
 
+        // On récupére le tableau correspondant à l'ID entrée en paramétre
         var coordinates = data.features[idSentier].geometry.coordinates;
-        var compteur = 0;
+
+        // On prépare le sentier final
         var sentier = [];
 
         for (let i = 0; i < coordinates.length; i++) {
-            
 
             let tableauConversion = [];
-            tableauConversion.push(data.features[i].geometry.coordinates[0][0],data.features[i].geometry.coordinates[0][1]);
-            let pointCoordonnes = proj4(firstProjection,secondProjection,tableauConversion);
-            pointCoordonnes.reverse();
-            console.log(pointCoordonnes);
-            
-            if(i==0)
-            this.ajouterMarqueur({"lat" :pointCoordonnes[0],"lng": pointCoordonnes[1]});
+            tableauConversion.push(data.features[idSentier].geometry.coordinates[i][0],data.features[idSentier].geometry.coordinates[i][1]);
+            let lattitudeLongitude = proj4(firstProjection,secondProjection,tableauConversion);
 
-            sentier.push({"lat" :pointCoordonnes[0],"lng": pointCoordonnes[1]})
+            // Inversement des deux coordonnées pour correspondre au format google lat/long
+            lattitudeLongitude.reverse();
+            
+            if(i==0){
+                this.ajouterMarqueur({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]}, "Debut sentier", "purple-dot");
+            } else if(i==coordinates.length-1){
+                this.ajouterMarqueur({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]}, "Fin sentier", "flag");
+            }
+
+            sentier.push({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]})
         }
 
         console.log(sentier);
@@ -61,17 +66,20 @@ class VueCarte {
 
         console.log(this.map);
         this.initialiserCoordonneesSentier(0);
+        
+        // Lister les id problématiques ici :
+        // 702 - Tableau du sentier semble invalide dans la donnée
 
     }
 
-    ajouterMarqueur(position) {
+    ajouterMarqueur(position, message, icon) {
         new google.maps.Marker({
             icon: {
-                url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png"
+                url: "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png"
             },
             position: position,
             map: this.map,
-            title: "Hello World!",
+            title: message,
         });
     }
 
