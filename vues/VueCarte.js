@@ -36,8 +36,10 @@ class VueCarte {
             
             if(i==0){
                 this.ajouterMarqueur({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]}, "Debut sentier", "purple-dot");
+                //centrage de la carte google maps au point de départ
+                this.map.setCenter({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]});
             } else if(i==coordinates.length-1){
-                this.ajouterMarqueur({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]}, "Fin sentier", "flag");
+                this.ajouterMarqueuar({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]}, "Fin sentier", "flag");
             }
 
             sentier.push({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]})
@@ -61,11 +63,11 @@ class VueCarte {
                 lat: positionMatane.lat,
                 lng: positionMatane.lng
             },
-            zoom: 15,
+            zoom: 14,
         });
 
         console.log(this.map);
-        this.initialiserCoordonneesSentier(0);
+        this.initialiserCoordonneesSentier(1571);
         
         // Lister les id problématiques ici :
         // 702 - Tableau du sentier semble invalide dans la donnée
@@ -112,6 +114,11 @@ class VueCarte {
         });
 
         path.setMap(this.map);
+    }
+
+    centrerCarte(){
+        //Pour faire la fonction il faudrait idéalement la coordonnées du milieu du sentier
+        // puis centrer la carte sur ce point 
     }
 
 
