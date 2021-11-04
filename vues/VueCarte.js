@@ -39,7 +39,7 @@ class VueCarte {
                 //centrage de la carte google maps au point de départ
                 this.map.setCenter({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]});
             } else if(i==coordinates.length-1){
-                this.ajouterMarqueuar({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]}, "Fin sentier", "flag");
+                this.ajouterMarqueur({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]}, "Fin sentier", "flag");
             }
 
             sentier.push({"lat" :lattitudeLongitude[0],"lng": lattitudeLongitude[1]})
