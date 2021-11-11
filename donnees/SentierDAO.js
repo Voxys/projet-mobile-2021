@@ -5,6 +5,10 @@ class SentierDAO{
 		this.map;
 	}
 
+	connexion() {
+
+	}
+
 	initialiserCoordonneesSentier(idSentier) {
 		console.log(data);
 
