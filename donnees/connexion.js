@@ -1,20 +1,26 @@
-const {Client} = require('pg');
-
-const client = new Client({
-    host: "51.222.140.74",
-    user: "poiuyt1996@hotmail.com",
+const { Pool, Client } = require('pg')
+const pool = new Pool({
+    user: 'postgres',
+    host: '51.222.140.74',
+    max: 20,
+    database: 'projetmobile',
+    password: 'rootUser',
     port: 5432,
-    password: "SamWeb2021@",
-    database: "testConnection"
 })
-
-client.connect();
-
-client.query('Select * from users', (err, res)=>{
-    if(!err){
-        console.log(res.row)
-    } else {
-        console.log(err.message);
-    }
-    client.end;
+pool.query('SELECT * FROM json_table', (err, res) => {
+  console.log(err, res)
+  pool.end()
 })
+// const client = new Client({
+//   user: 'postgres',
+//   host: '51.222.140.74',
+//   max: 20,
+//   database: 'projetmobile',
+//   password: 'rootUser',
+//   port: 5432,
+// })
+// client.connect()
+// client.query('SELECT * FROM json_table', (err, res) => {
+//   console.log(err, res)
+//   client.end()
+// })
