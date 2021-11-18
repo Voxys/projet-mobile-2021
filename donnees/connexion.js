@@ -5,22 +5,10 @@ const pool = new Pool({
     max: 20,
     database: 'projetmobile',
     password: 'rootUser',
-    port: 5432,
+    port: 2500,
 })
-pool.query('SELECT * FROM json_table', (err, res) => {
-  console.log(err, res)
+
+pool.query('SELECT geometry FROM json_table WHERE id=10', (err, res) => {
+  console.log(res['rows'][0]['geometry']);  
   pool.end()
 })
-// const client = new Client({
-//   user: 'postgres',
-//   host: '51.222.140.74',
-//   max: 20,
-//   database: 'projetmobile',
-//   password: 'rootUser',
-//   port: 5432,
-// })
-// client.connect()
-// client.query('SELECT * FROM json_table', (err, res) => {
-//   console.log(err, res)
-//   client.end()
-// })
