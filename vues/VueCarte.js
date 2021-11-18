@@ -29,7 +29,7 @@ class VueCarte {
 		});
 
 		console.log(this.map);
-		var sentier = await this.dao.initialiserCoordonneesSentier(322);
+		var sentier = await this.dao.initialiserCoordonneesSentier(100);
 		var path = this.dao.tracerSentier(sentier);
 		var marqueurDebutSentier = this.dao.ajouterMarqueur(sentier[0], "Debut sentier", "purple-dot");
 		var marqueurFinSentier = this.dao.ajouterMarqueur(sentier[sentier.length-1], "Fin sentier", "flag");
