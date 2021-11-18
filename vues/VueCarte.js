@@ -11,7 +11,7 @@ class VueCarte {
 		document.getElementsByTagName("body")[0].innerHTML = this.vueCarte;
 	}
 
-	initialiserCarte() {
+	async initialiserCarte() {
 
 		const positionMatane = {
 			lat: 48.849998,
@@ -25,11 +25,11 @@ class VueCarte {
 				lat: positionMatane.lat,
 				lng: positionMatane.lng
 			},
-			zoom: 14,
+			zoom: 15,
 		});
 
 		console.log(this.map);
-		var sentier = this.dao.initialiserCoordonneesSentier(1571);
+		var sentier = await this.dao.initialiserCoordonneesSentier(322);
 		var path = this.dao.tracerSentier(sentier);
 		var marqueurDebutSentier = this.dao.ajouterMarqueur(sentier[0], "Debut sentier", "purple-dot");
 		var marqueurFinSentier = this.dao.ajouterMarqueur(sentier[sentier.length-1], "Fin sentier", "flag");
