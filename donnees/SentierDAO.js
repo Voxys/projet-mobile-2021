@@ -1,6 +1,5 @@
 class SentierDAO{
 	constructor(){
-		console.log("constructor VueCarte.js");
 		this.vueCarte = document.getElementById("vue-carte").innerHTML;
 		this.map;
 		this.baseDeDonneesDAO = new BaseDeDonneesDAO();
@@ -8,20 +7,16 @@ class SentierDAO{
 	}
 
 	async initialiserCoordonneesSentier(idSentier) {
-		console.log(data);
 
 		try{
 			var coordonnees = await this.baseDeDonneesDAO.obtenirCoordonnees();
-			console.log(coordonnees);
+			//console.log(coordonnees);
 		}
 		catch(err){
 			console.log("err.stack");
 		}
-
-		console.log("======= C ICI =======");
 		var jsonData = JSON.parse(coordonnees);
-		console.log(jsonData);
-		console.log(jsonData.geometry.coordinates);
+		//console.log(jsonData);
 
 
 		// Le jeu de données est au format plan, projeté sur la zone du Québec (format EPSG:32198)

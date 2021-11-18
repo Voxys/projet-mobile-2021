@@ -16,7 +16,7 @@ class BaseDeDonneesDAO {
             const xhttp = new XMLHttpRequest();
                 xhttp.open("GET", "http://51.222.140.74:3000",false);
                 xhttp.send();
-                console.log(xhttp.responseText);
+                //console.log(xhttp.responseText);
                 this.coordonnees = xhttp.responseText;
                 
             }

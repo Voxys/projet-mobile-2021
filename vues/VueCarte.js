@@ -1,13 +1,11 @@
 class VueCarte {
 	constructor() {
-		console.log("constructor VueCarte.js");
 		this.vueCarte = document.getElementById("vue-carte").innerHTML;
 		this.dao = new SentierDAO();
 		this.map;
 	}
 
 	afficher() {
-		console.log("VueCarte" + "\n" + "   |___> afficher()");
 		document.getElementsByTagName("body")[0].innerHTML = this.vueCarte;
 	}
 
@@ -27,8 +25,6 @@ class VueCarte {
 			},
 			zoom: 15,
 		});
-
-		console.log(this.map);
 		var sentier = await this.dao.initialiserCoordonneesSentier(100);
 		var path = this.dao.tracerSentier(sentier);
 		var marqueurDebutSentier = this.dao.ajouterMarqueur(sentier[0], "Debut sentier", "purple-dot");

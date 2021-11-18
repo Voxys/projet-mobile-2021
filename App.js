@@ -5,7 +5,6 @@ class App {
         this.vueCarte = vueCarte;
         this.accueil = document.getElementById("vue-accueil").innerHTML;
         this.window.addEventListener("hashchange", () => this.naviguer());
-        console.log("constructor App.js");
         this.afficher();
         
         //permet en cas de reload de la page de revenir à l'index
@@ -13,12 +12,10 @@ class App {
     }
 
     afficher() {
-        console.log("App.js" + "\n" + "   |___> afficher()");
         document.getElementsByTagName("body")[0].innerHTML = this.accueil;
     }
 
     naviguer() {
-        console.log("App.js" + "\n" + "   |___> naviguer()");
         let hash = window.location.hash;
 
         if (!hash) {
