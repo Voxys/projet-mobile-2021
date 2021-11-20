@@ -3,21 +3,18 @@ class SentierDAO{
 		this.vueCarte = document.getElementById("vue-carte").innerHTML;
 		this.map;
 		this.baseDeDonneesDAO = new BaseDeDonneesDAO();
-		this.baseDeDonneesDAO.initialiserConnexion();
 	}
 
 	async initialiserCoordonneesSentier(idSentier) {
 
 		try{
-			var coordonnees = await this.baseDeDonneesDAO.obtenirCoordonnees();
-			//console.log(coordonnees);
+			var coordonnees = await this.baseDeDonneesDAO.obtenirCoordonnees(500);
 		}
 		catch(err){
 			console.log("err.stack");
 		}
-		var jsonData = JSON.parse(coordonnees);
-		//console.log(jsonData);
 
+		var jsonData = JSON.parse(coordonnees);
 
 		// Le jeu de données est au format plan, projeté sur la zone du Québec (format EPSG:32198)
 		var firstProjection = 'PROJCS["NAD83 / Quebec Lambert",GEOGCS["NAD83",DATUM["North_American_Datum_1983",SPHEROID["GRS 1980",6378137,298.257222101,AUTHORITY["EPSG","7019"]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY["EPSG","6269"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4269"]],PROJECTION["Lambert_Conformal_Conic_2SP"],PARAMETER["standard_parallel_1",60],PARAMETER["standard_parallel_2",46],PARAMETER["latitude_of_origin",44],PARAMETER["central_meridian",-68.5],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],AUTHORITY["EPSG","32198"]]';

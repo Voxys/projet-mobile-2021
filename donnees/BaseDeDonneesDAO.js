@@ -4,38 +4,38 @@ class BaseDeDonneesDAO {
         this.coordonnees;
     }
 
-    initialiserConnexion() {
-        //dire a node js de ce connecter
-    }
-
     async obtenirCoordonnees(idSentier) {
-        //dire a node js de renvoyer les coordonnes du sentier
 
         try{
-            
-            const xhttp = new XMLHttpRequest();
-                // xhttp.open("GET", "http://51.222.140.74&" + idSentier+ ":3000",false);
+                const xhttp = new XMLHttpRequest();
                 xhttp.open("GET", "http://51.222.140.74:3000",false);
-                xhttp.setRequestHeader("id","200");
+                xhttp.setRequestHeader("id", idSentier);
+                xhttp.setRequestHeader("requete", "obtenirCoordonnees");
                 xhttp.send();
-                //console.log(xhttp.responseText);
                 this.coordonnees = xhttp.responseText;
-                
             }
             catch(err){
                 console.log(err.stack)
             }
             return this.coordonnees;
-
     }
 
-   
-
-
-
+    async obtenirListeSentiers(){
+        try{
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "http://51.222.140.74:3000",false);
+            // xhttp.setRequestHeader("id", idSentier);
+            xhttp.setRequestHeader("requete", "obtenirListeSentiers");
+            xhttp.send();
+            this.listeSentiers = xhttp.responseText;
+        }
+        catch(err){
+            console.log(err.stack)
+        }
+        return this.listeSentiers;
+    }
 
     obtenirEtablissement(idSentier) {
-        //dire a node js de renvoyer l'etablissement 
 
     }
 }
