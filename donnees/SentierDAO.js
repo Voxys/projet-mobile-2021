@@ -8,7 +8,7 @@ class SentierDAO{
 	async initialiserCoordonneesSentier(idSentier) {
 
 		try{
-			var coordonnees = await this.baseDeDonneesDAO.obtenirCoordonnees(500);
+			var coordonnees = await this.baseDeDonneesDAO.obtenirCoordonnees(idSentier);
 		}
 		catch(err){
 			console.log("err.stack");

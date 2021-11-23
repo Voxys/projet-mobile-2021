@@ -26,7 +26,11 @@ class App {
         }  
         else if (hash.match(/^#vue-carte/)) {
             this.vueCarte.afficher();
-            this.vueCarte.initialiserCarte();
+
+            let navigation = hash.match(/^#vue-carte\/([0-9]+)/);
+            console.log(navigation[1]);
+            let idSentier = navigation[1];
+            this.vueCarte.initialiserCarte(idSentier);
         } 
     }
 }

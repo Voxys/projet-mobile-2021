@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
   <!----------Proj4----------->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.5/proj4.js"></script>
-  <script src="vues/VueTableauBord.js"></script>
+  <script defer src="vues/VueTableauBord.js"></script>
   <script src="vues/VueCarte.js"></script>
   <script src="donnees/BaseDeDonneesDAO.js"></script>
   <script src="donnees/SentierDAO.js"></script>
@@ -47,14 +47,27 @@
     <ion-app>
       <ion-content fullscreen>
         <div id="slides-container">
-          
-        </div>
-        <footer>
-          <ion-icon name="filter-outline"></ion-icon>
-          <ion-searchbar></ion-searchbar>
-        </footer>
-        </ion-content>
-      </ion-app>
+        <!-- <ion-slide>
+        <a id="refSentier" href="#vue-carte/{Sentier.id}">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Sentier de la marmotte sucré</ion-card-title>
+          </ion-card-header>
+          <div class="ion-card-bottom">
+            <ion-chip color="primary">
+              <ion-label>Raquette</ion-label>
+            </ion-chip>
+          </div>
+        </ion-card>
+      </a>
+      </ion-slide> -->
+  </div>
+  <footer>
+    <ion-icon name="filter-outline"></ion-icon>
+    <ion-searchbar></ion-searchbar>
+  </footer>
+  </ion-content>
+</ion-app>
   </script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script type="plain/text" id="vue-carte">
