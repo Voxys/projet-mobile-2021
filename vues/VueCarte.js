@@ -3,6 +3,7 @@ class VueCarte {
 		this.vueCarte = document.getElementById("vue-carte").innerHTML;
 		this.dao = new SentierDAO();
 		this.map;
+		this.sentier;
 	}
 
 	afficher() {
@@ -25,23 +26,48 @@ class VueCarte {
 			},
 			zoom: 15,
 		});
-		var sentier = await this.dao.initialiserCoordonneesSentier(id);
-		var path = this.dao.tracerSentier(sentier);
-		var marqueurDebutSentier = this.dao.ajouterMarqueur(sentier[0], "Debut sentier", "purple-dot");
-		var marqueurFinSentier = this.dao.ajouterMarqueur(sentier[sentier.length-1], "Fin sentier", "flag");
+		this.sentier = await this.dao.initialiserCoordonneesSentier(id);
+		var path = this.dao.tracerSentier(this.sentier);
+		var marqueurDebutSentier = this.dao.ajouterMarqueur(this.sentier[0], "Debut sentier", "purple-dot");
+		var marqueurFinSentier = this.dao.ajouterMarqueur(this.sentier[this.sentier.length - 1], "Fin sentier", "flag");
 
 		path.setMap(this.map);
 		marqueurDebutSentier.setMap(this.map);
 		marqueurFinSentier.setMap(this.map);
 
-		this.map.setCenter(sentier[0]);
+		this.map.setCenter(this.sentier[0]);
 
-
-		// Lister les id problématiques ici :
-		// 702 - Tableau du sentier semble invalide dans la donnée
-
+		//Attendre le clique du bouton pour lancer l'itinéraire
+		this.itineraireSentier();
 	}
 
+	itineraireSentier() {
+		let button = document.getElementById("start");
+		button.addEventListener("click", () => {
 
+			var directionsService = new google.maps.DirectionsService();
+			var directionsRenderer = new google.maps.DirectionsRenderer();
+			directionsRenderer.setMap(this.map);
+
+			console.log(this.sentier[0]);
+
+			var request = {
+				origin:  new google.maps.LatLng(48.45850041730631, -68.49808773840113),
+				destination: new google.maps.LatLng(this.sentier[0].lat, this.sentier[0].lng),
+				// Note that JavaScript allows us to access the constant
+				// using square brackets and a string value as its
+				// "property."
+				travelMode: 'DRIVING'
+			};
+			directionsService.route(request, function (response, status) {
+				if (status == 'OK') {
+					directionsRenderer.setDirections(response);
+				}
+			});
+
+
+		})
+	}
 }
-
+// origin: new google.maps.LatLng(48.849998,-67.533333),
+// destination: new google.maps.LatLng(48.4525,-68.5232),
