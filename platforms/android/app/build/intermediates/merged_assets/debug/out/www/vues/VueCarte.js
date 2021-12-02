@@ -43,51 +43,44 @@ class VueCarte {
 
 	itineraireSentier() {
 		let button = document.getElementById("start");
-		button.addEventListener("click", () => {
+		button.addEventListener("click", async () => {
 
 			var directionsService = new google.maps.DirectionsService();
 			var directionsRenderer = new google.maps.DirectionsRenderer();
 			directionsRenderer.setMap(this.map);
 
-			console.log(this.sentier[0]);
+			var latitude;
+			var longitude;
+			var onSuccess = await
 
-			var request = {
-				origin:  new google.maps.LatLng(48.45850041730631, -68.49808773840113),
-				destination: new google.maps.LatLng(this.sentier[0].lat, this.sentier[0].lng),
-				// Note that JavaScript allows us to access the constant
-				// using square brackets and a string value as its
-				// "property."
-				travelMode: 'DRIVING'
+			function (position) {
+				latitude = position.coords.latitude;
+				longitude = position.coords.longitude;
 			};
-			directionsService.route(request, function (response, status) {
-				if (status == 'OK') {
-					directionsRenderer.setDirections(response);
-				}
-			});
 
-                var onSuccess = function(position) {
-                        alert('Latitude: '          + position.coords.latitude          + '\n' +
-                              'Longitude: '         + position.coords.longitude         + '\n' +
-                              'Altitude: '          + position.coords.altitude          + '\n' +
-                              'Accuracy: '          + position.coords.accuracy          + '\n' +
-                              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-                              'Heading: '           + position.coords.heading           + '\n' +
-                              'Speed: '             + position.coords.speed             + '\n' +
-                              'Timestamp: '         + position.timestamp                + '\n');
-                    };
+			function onError(error) {
+				alert('code: ' + error.code + '\n' +
+					'message: ' + error.message + '\n');
+			}
 
-                    // onError Callback receives a PositionError object
-                    //
-                    function onError(error) {
-                        alert('code: '    + error.code    + '\n' +
-                              'message: ' + error.message + '\n');
-                    }
+			navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
-                    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-
-
+			var sentierScope = this.sentier;
+			setTimeout(function () {
+				var request = {
+					origin: new google.maps.LatLng(latitude, longitude),
+					destination: new google.maps.LatLng(sentierScope[0].lat, sentierScope[0].lng),
+					// Note that JavaScript allows us to access the constant
+					// using square brackets and a string value as its
+					// "property."
+					travelMode: 'DRIVING'
+				};
+				directionsService.route(request, function (response, status) {
+					if (status == 'OK') {
+						directionsRenderer.setDirections(response);
+					}
+				});
+			}, 1000);
 		})
 	}
 }
-// origin: new google.maps.LatLng(48.849998,-67.533333),
-// destination: new google.maps.LatLng(48.4525,-68.5232),

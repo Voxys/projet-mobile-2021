@@ -23,6 +23,6 @@
 23    android:versionName="1.0" >
 24
 25    <uses-sdk android:minSdkVersion="22" />
-25-->C:\cordova_project\projetmobile\platforms\android\CordovaLib\AndroidManifest.xml
+25-->C:\Users\brice\Documents\5. GitHub\projet-mobile-2021-Poyut\platforms\android\CordovaLib\AndroidManifest.xml
 26
 27</manifest>
