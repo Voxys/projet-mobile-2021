@@ -1,0 +1,88 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.cordova.hellocordova"
+4    android:hardwareAccelerated="true"
+5    android:versionCode="10000"
+6    android:versionName="1.0.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="22"
+9-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml
+10        android:targetSdkVersion="29" />
+10-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml
+11
+12    <supports-screens
+12-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:3:5-191
+13        android:anyDensity="true"
+13-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:3:23-48
+14        android:largeScreens="true"
+14-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:3:49-76
+15        android:normalScreens="true"
+15-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:3:77-105
+16        android:resizeable="true"
+16-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:3:106-131
+17        android:smallScreens="true"
+17-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:3:132-159
+18        android:xlargeScreens="true" />
+18-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:3:160-188
+19
+20    <uses-permission android:name="android.permission.INTERNET" />
+20-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:4:5-67
+20-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
+21    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+21-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:13:5-81
+21-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:13:22-78
+22    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+22-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:14:5-79
+22-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:14:22-76
+23
+24    <uses-feature
+24-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:15:5-90
+25        android:name="android.hardware.location.gps"
+25-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:15:19-63
+26        android:required="true" />
+26-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:15:64-87
+27
+28    <application
+28-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:5:5-12:19
+29        android:debuggable="true"
+30        android:hardwareAccelerated="true"
+30-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
+31        android:icon="@mipmap/ic_launcher"
+31-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:5:53-87
+32        android:label="@string/app_name"
+32-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:5:88-120
+33        android:supportsRtl="true"
+33-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:5:121-147
+34        android:testOnly="true"
+35        android:usesCleartextTraffic="true" >
+35-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:5:148-183
+36        <activity
+36-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
+37            android:name="io.cordova.hellocordova.MainActivity"
+37-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:6:205-232
+38            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+38-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:6:19-135
+39            android:label="@string/activity_name"
+39-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:6:136-173
+40            android:launchMode="singleTop"
+40-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:6:174-204
+41            android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+41-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:6:233-295
+42            android:windowSoftInputMode="adjustResize" >
+42-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:6:296-338
+43            <intent-filter android:label="@string/launcher_name" >
+43-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:7:13-10:29
+43-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:7:28-65
+44                <action android:name="android.intent.action.MAIN" />
+44-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:8:17-69
+44-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:8:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:9:17-77
+46-->C:\cordova_project\projetmobile\platforms\android\app\src\main\AndroidManifest.xml:9:27-74
+47            </intent-filter>
+48        </activity>
+49    </application>
+50
+51</manifest>
