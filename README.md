@@ -21,3 +21,4 @@ Librairie Java ou JavaScript externe au choix
 [![](https://img.shields.io/badge/Jeu_de_donnees-EBEBEB?style=for-the-badge&logo=databricks&logoColor=white)](https://www.donneesquebec.ca/recherche/dataset/sentiers-hivernaux/resource/540ad36a-1303-4b1a-b554-64c97d31ed7a)
 [![](https://img.shields.io/badge/Figma-39ADFC?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/kbTB6I61wlw1H9jSvUQUoL/Projet-Mobile)
 [![](https://img.shields.io/badge/Figjam-A969FC?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/xSu7TeECdZf24g8Rxhs7YT/Projet-Mobile)
+[![youtube](https://img.shields.io/badge/Notre video de presentation-000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=8IgYrcwWeyc)
