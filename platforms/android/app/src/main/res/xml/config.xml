@@ -1,15 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
-    </feature>
-    <name>HelloCordova</name>
+<widget id="io.cordova.snoway" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Snoway</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        ! Collegiate Project! A simple mobile application listing different trails in Quebec and that makes it easy to go there
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="maxence.schroeder@gmail.com" href="https://maxence.schroeder.xyz">
+        Atchoum software
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -19,9 +15,17 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <allow-intent href="market:*" />
-    <preference name="loglevel" value="DEBUG" />
-    <feature name="Geolocation">
-        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
-    </feature>
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="res/iconsforsnoway.png" />
+        <icon src="res/iconsforsnoway.png" density="ldpi"/>
+        <icon src="res/iconsforsnoway.png" density="mdpi"/>
+        <icon src="res/iconsforsnoway.png" density="hdpi"/>
+        <icon src="res/iconsforsnoway.png" density="xhdpi"/>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <icon src="res/iconsforsnoway.png" />
 </widget>
