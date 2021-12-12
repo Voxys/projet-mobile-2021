@@ -1,5 +1,4 @@
 io.cordova.hellocordova
-color background
 drawable screen
 mipmap ic_launcher
 mipmap ic_launcher_background
