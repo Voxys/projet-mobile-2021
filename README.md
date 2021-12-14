@@ -24,3 +24,7 @@ Librairie Java ou JavaScript externe au choix
 
 ## Video de presentation 
 [![](https://img.shields.io/badge/Notre_video_de_presentation-fc0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=8IgYrcwWeyc)
+
+## Publication sur l'appstore d'amazon
+
+![image](https://user-images.githubusercontent.com/54377206/146006866-ea337cba-2098-4ab2-bc62-4e2f8ba517c6.png)
