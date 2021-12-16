@@ -1,16 +1,16 @@
 # Projet mobile final
 Réalisation d’une application mobile listant les  différents sentiers hivernaux présent au Québec dont la Sépaq est gestionnaire.
 
-Architecture imposée
-  Architecture MVC + DAO (Android ou Cordova)
-1 Gesture au choix
-  swipe
-Données distantes au choix
-  JSON (postgres)
-Librairie Java ou JavaScript externe au choix
-  Google map et Ionic
-1 Composant de l’appareil au choix
-  gps
+#Architecture imposée
+ - Architecture MVC + DAO (Android ou Cordova)
+#1 Gesture au choix
+ - swipe
+#Données distantes au choix
+ - JSON (postgres)
+#Librairie Java ou JavaScript externe au choix
+ - Google map et Ionic
+#1 Composant de l’appareil au choix
+ - gps
   
 ## 👨‍💻 Participants
 [![github](https://img.shields.io/badge/brice_camus-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Voxys)
