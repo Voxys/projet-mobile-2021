@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+
+  db:
+    container_name: container_postgres
+    image: postgres 
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin 
+      - POSTGRES_DB=postgres
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    networks:
+      - net
+    ports:
+      - "5432:5432"
+    
+  pgadmin4:
+    container_name: container_pgadmin
+    image: dpage/pgadmin4
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: bricecamus27@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "80:80" 
+    networks:
+      - net
+
+  nodejs:
+    container_name: container_nodejs
+    image: node
+    ports:
+      - "3000:3000"
+    networks:
+      - net
+    volumes:
+      - /home/docker/ressources/server:/home/node
+    working_dir: /home/node
+    command: bash -c "npm install && node server.js"
+       
+volumes:
+  db_volume:
+    external: true
+    
+networks:
+  net: {}
