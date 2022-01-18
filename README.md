@@ -20,3 +20,5 @@ Amélioration en cours :
 
 - [🔨] Filtrer les sentiers par catégorie
 
+- [🔨] Faire un guide de mise en place du serveur ( création des volumes externes au docker-compose, importation des données des sentiers avec un script SQL )
+
