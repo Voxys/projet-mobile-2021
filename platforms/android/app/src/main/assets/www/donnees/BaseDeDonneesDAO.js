@@ -8,7 +8,7 @@ class BaseDeDonneesDAO {
 
         try {
             const xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "http://51.222.140.74:3000", false);
+            xhttp.open("GET", "http://51.79.68.250:3000", false);
             xhttp.setRequestHeader("id", idSentier);
             xhttp.setRequestHeader("requete", "obtenirCoordonnees");
             xhttp.send();
@@ -22,7 +22,7 @@ class BaseDeDonneesDAO {
     async obtenirListeSentiers() {
         try {
             const xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "http://51.222.140.74:3000", false);
+            xhttp.open("GET", "http://51.79.68.250:3000", false);
             // xhttp.setRequestHeader("id", idSentier);
             xhttp.setRequestHeader("requete", "obtenirListeSentiers");
             xhttp.send();
