@@ -18,5 +18,27 @@ Amélioration en cours :
 
 - [✅] Conteneurisation des services server-side ( nodejs, postgresql, pgadmin )
 
-- [🔨] Faire un guide de mise en place du serveur ( création des volumes externes au docker-compose, importation des données des sentiers avec un script SQL )
+- [✅] Faire un guide de mise en place du serveur ( création des volumes externes au docker-compose, importation des données des sentiers avec un script SQL )
 
+### Guide d'utilisation :
+  1 - Indiquer votre clé d'API google maps dans l'emplacement prévu dans index.html : 
+ ```
+  <script src="https://maps.googleapis.com/maps/api/js?key=yourgooglemapsapikey" async></script>
+ ```
+ 
+  2 - Indiquer l'IP de votre VPS dans BaseDAO :
+  ```
+  xhttp.open("GET", "http://IP-VPS:3000", false);
+  ```
+  
+  
+  3 - Exécuter le docker compose avec :
+  ```
+  sudo docker stack deploy --compose-file=<pathcompose> <nomstack>
+  ```
+  
+  4 - Importer le script importation.sql avec pgadmin4 en vous rendant à l'IP de votre VPS
+  ```
+  - email : bricecamus27@gmail.com 
+  - password : admin
+  ```  
